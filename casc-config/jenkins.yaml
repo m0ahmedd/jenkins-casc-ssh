@@ -1,0 +1,16 @@
+jenkins:
+  systemMessage: "Welcome to Jenkins configured as code!"
+  numExecutors: 4
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+          name: "Abdelaziz"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+unclassified:
+  location:
+    adminAddress: "m0ahmedd722@gmail.com"

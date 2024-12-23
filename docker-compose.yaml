@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  jenkins-master:
+    image: jenkins-casc:jv17
+    container_name: jenkins-master
+    ports:
+      - "8083:8080" # Jenkins Web Interface
+      - "50000:50000" # JNLP (Java Network Launch Protocol)  agent communication
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs/jenkins.yaml
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    volumes:
+      - /home/devops/depi/projects/jenkins/casc-jenkins/jenkins_home:/var/jenkins_home # Persist Jenkins data
+      - ./casc-config:/var/jenkins_home/casc_configs # Mount CasC config directory
+      - ./jenkins_master_key:/var/jenkins_home/jenkins_master_key # Mount SSH private key
+    restart: always
+  # agent1:
+    # image: ubuntu:20.04
+    # container_name: jenkins-agent1
+    # privileged: true
+    # command: "/usr/sbin/sshd -D"
+    # ports:
+      # - "2201:22"
+    # volumes:
+      # - ./jenkins_master_key.pub:/home/jenkins/.ssh/authorized_keys # Public key for SSH
+    # environment:
+      # - USER=jenkins
+      # - HOME=/home/jenkins
+    # restart: always
+# 
+  # agent2:
+    # image: ubuntu:20.04
+    # container_name: jenkins-agent2
+    # privileged: true
+    # command: "/usr/sbin/sshd -D"
+    # ports:
+      # - "2202:22"
+    # volumes:
+      # - ./jenkins_master_key.pub:/home/jenkins/.ssh/authorized_keys # Public key for SSH
+    # environment:
+      # - USER=jenkins
+      # - HOME=/home/jenkins
+    # restart: always
