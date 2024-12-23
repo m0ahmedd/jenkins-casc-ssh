@@ -14,6 +14,8 @@ services:
       - /home/devops/depi/projects/jenkins/casc-jenkins/jenkins_home:/var/jenkins_home # Persist Jenkins data
       - ./casc-config:/var/jenkins_home/casc_configs # Mount CasC config directory
       - ./jenkins_master_key:/var/jenkins_home/jenkins_master_key # Mount SSH private key
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
     restart: always
   # agent1:
     # image: ubuntu:20.04
