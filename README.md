@@ -24,7 +24,6 @@ This repository demonstrates how to create a Jenkins Master to Slave connection 
 
 Before running the setup, make sure you have the following installed:
 
-- **SSH**: [Install SSH Server on slave](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
 - **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
 - **Git**: [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
