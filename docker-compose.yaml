@@ -16,6 +16,7 @@ services:
       - ./jenkins_master_key:/var/jenkins_home/jenkins_master_key # Mount SSH private key
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
+      - /usr/bin/compose:/usr/bin/compose
     restart: always
   # agent1:
     # image: ubuntu:20.04
