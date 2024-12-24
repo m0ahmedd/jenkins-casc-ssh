@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   jenkins-master:
-    image: jenkins-casc:jv17
+    image: moabdelaziz1/jenkins-casc:jv17
     container_name: jenkins-master
     ports:
       - "8083:8080" # Jenkins Web Interface
